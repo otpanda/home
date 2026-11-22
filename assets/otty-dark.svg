@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1072 1072" role="img" aria-labelledby="title desc">
+<title id="title">Otty, the OTPanda mascot</title><desc id="desc">A black and white panda with a curled tuft, bright eyes and a raised asterisk paw, surrounded by sweeping ribbons.</desc>
+<defs>
+<linearGradient id="green" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#10B981"/><stop offset=".52" stop-color="#00CB91"/><stop offset="1" stop-color="#009C69"/></linearGradient>
+<linearGradient id="greenShade" x1="0" x2="1"><stop stop-color="#00885E"/><stop offset="1" stop-color="#10B981"/></linearGradient>
+<radialGradient id="fur" cx=".38" cy=".05" r="1"><stop stop-color="#484955"/><stop offset=".48" stop-color="#20212B"/><stop offset="1" stop-color="#090C12"/></radialGradient>
+<radialGradient id="innerEar" cx=".6" cy=".75" r=".8"><stop stop-color="#1B1D27"/><stop offset="1" stop-color="#070A10"/></radialGradient>
+<linearGradient id="whiteFur" x1=".35" y1=".3" x2=".6" y2="1"><stop stop-color="#FFFFFF"/><stop offset=".7" stop-color="#F9F9FC"/><stop offset="1" stop-color="#D7D8E0"/></linearGradient>
+<radialGradient id="badge" cx=".4" cy=".15" r="1"><stop stop-color="#006744"/><stop offset="1" stop-color="#003522"/></radialGradient>
+<linearGradient id="paw" x1=".4" y1="0" x2=".65" y2="1"><stop stop-color="#444754"/><stop offset=".65" stop-color="#242630"/><stop offset="1" stop-color="#11151D"/></linearGradient>
+</defs><path fill="#15181C" d="M0 0H1072V1072H0Z"/><g id="swirls" fill="url(#green)">
+<path d="M94 253C199 97 342 40 473 62C564 74 641 109 693 147C542 79 359 70 219 161C170 192 129 229 94 253Z"/>
+<path d="M218 217C112 357 94 543 154 699C217 864 373 971 550 981C681 988 804 945 898 881C784 982 632 1032 482 1009C285 980 133 851 88 659C45 484 99 305 218 217Z"/>
+<path d="M251 310C314 166 460 123 591 161C637 174 679 195 715 222C577 164 430 183 337 294C251 397 239 544 300 669C184 589 143 469 176 354C217 207 365 113 605 126C429 81 289 167 251 310Z"/>
+<path d="M961 473C1019 598 1006 713 931 801L891 746C948 667 973 573 961 473Z"/>
+</g>
+<path fill="url(#greenShade)" d="M251 310C209 421 218 542 277 642L301 670C183 591 143 469 176 354C196 283 242 225 309 187C275 221 259 264 251 310Z"/>
+<g id="panda">
+<path fill="url(#fur)" stroke="#080E13" stroke-width="9" d="M286 365C321 277 452 218 576 226C746 208 864 315 912 454C928 497 944 534 930 575C917 624 897 683 872 737C845 811 780 890 673 905C504 926 358 851 283 738C196 657 174 491 286 365Z"/>
+<path fill="url(#whiteFur)" d="M337 322C405 266 488 243 585 244C698 231 825 301 881 414C899 450 913 491 915 533C925 584 897 633 868 670C802 739 711 763 615 758C503 762 378 759 303 706C218 645 217 559 245 479C266 415 285 370 337 322Z"/>
+<path fill="#FFFFFF" d="M344 333C411 275 492 254 590 255C709 241 821 311 868 408C902 478 906 528 886 574C824 694 646 759 482 726C373 705 290 658 264 573C244 504 286 387 344 333Z" opacity=".5"/>
+<path fill="url(#fur)" stroke="#0A1015" stroke-width="8" d="M259 400C213 372 220 301 244 258C275 205 326 177 375 180C426 181 469 214 480 255C492 287 471 309 442 312C406 307 383 325 361 359C334 401 297 423 259 400Z"/>
+<path fill="url(#innerEar)" d="M308 361C284 344 290 302 314 276C343 245 384 241 414 266C426 276 433 292 432 308C403 305 383 325 361 359C342 364 324 368 308 361Z"/>
+<path fill="url(#fur)" stroke="#0A1015" stroke-width="8" d="M716 238C742 203 788 191 833 205C890 222 921 268 919 315C919 350 901 381 877 396C851 360 828 322 793 296C768 276 737 258 716 238Z"/>
+<path fill="url(#innerEar)" d="M782 290C797 260 829 252 853 269C879 288 883 327 866 349C841 321 814 302 782 290Z"/>
+<path fill="url(#fur)" d="M563 263C572 247 577 233 574 218C568 201 574 185 587 187C615 187 628 210 625 237C650 232 674 236 694 246C665 245 649 251 633 257C647 270 647 282 640 290C627 272 615 266 601 264C613 275 611 285 604 288C589 276 567 278 563 263Z"/>
+<path fill="#FFFFFF" d="M587 209C600 209 609 219 610 235L591 242C597 228 592 216 587 209Z"/>
+<path fill="url(#fur)" d="M397 469C451 419 506 389 549 401C589 412 613 449 609 493C605 544 567 585 519 612C478 635 432 633 405 612C366 581 371 513 397 469Z"/>
+<path fill="url(#fur)" d="M779 410C808 394 837 414 859 446C883 478 899 518 887 550C878 576 855 596 835 605C801 590 769 567 753 536C739 506 739 432 779 410Z"/>
+<g id="eyes">
+<path fill="#FCFCFF" d="M505 501C525 471 555 471 566 497C580 530 556 562 529 555C505 550 493 529 505 501Z"/>
+<ellipse fill="#0C1017" cx="526" cy="521" rx="27" ry="33" transform="rotate(15 526 521)"/>
+<ellipse fill="#03070C" cx="525" cy="522" rx="17" ry="21"/>
+<circle fill="#FFFFFF" cx="524" cy="503" r="9"/>
+<path fill="#FCFCFF" d="M777 496C791 471 812 473 823 497C838 527 823 553 804 549C785 547 768 521 777 496Z"/>
+<ellipse fill="#0C1017" cx="797" cy="518" rx="18" ry="29" transform="rotate(-12 797 518)"/>
+<ellipse fill="#03070C" cx="797" cy="519" rx="12" ry="18"/>
+<circle fill="#FFFFFF" cx="788" cy="503" r="7"/>
+</g>
+<path fill="url(#fur)" d="M659 550C676 540 709 541 733 549C755 561 726 587 705 592C688 598 642 566 659 550Z"/>
+<path fill="#646571" opacity=".55" d="M664 551C683 546 710 547 728 551C715 560 680 562 664 551Z"/>
+<path fill="none" stroke="#090D14" stroke-width="15" stroke-linecap="round" d="M698 589L697 617C672 644 633 650 610 613M697 617C709 632 719 637 730 631"/>
+<path fill="url(#paw)" stroke="#090D14" stroke-width="12" d="M304 741C348 773 401 792 448 780C495 767 557 753 606 757C651 759 680 786 697 824C718 863 703 890 678 900C554 918 423 870 346 801C327 783 314 762 304 741Z"/>
+</g>
+<g id="asterisk-paw">
+<path fill="url(#badge)" stroke="#004B31" stroke-width="7" d="M750 649C818 588 888 594 943 642C997 689 990 769 954 828C919 882 854 902 790 875C728 850 691 789 698 733C701 702 719 674 750 649Z"/>
+<path fill="none" stroke="#78D9B3" stroke-opacity=".55" stroke-width="6" stroke-linecap="round" d="M758 649C820 603 879 600 924 636"/>
+<path fill="#FFFFFF" d="M827 650Q824 650 823 656L819 714L774 682Q768 677 764 683L752 704Q749 710 755 714L804 742L753 770Q748 773 751 779L764 802Q768 808 774 803L817 772L814 829Q814 836 821 836L847 837Q853 837 854 830L855 773L901 805Q907 810 911 804L924 782Q928 776 921 772L871 743L923 717Q930 713 926 707L914 684Q911 678 905 681L859 712L864 658Q864 651 857 651Z"/>
+</g></svg>
