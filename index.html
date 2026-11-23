@@ -35,6 +35,7 @@
   .btn.ghost{background:#fff;color:#0a7955;border-color:#cfe0d6}
   .btn.ghost:hover{border-color:#0a7955}
   .btn.small{padding:8px 16px;font-size:14px}
+  span.btn.disabled{opacity:.55;cursor:not-allowed}
 
   .hero{padding:88px 0 64px;text-align:center;background:radial-gradient(640px 320px at 50% -60px,#d9f3e6 0%,rgba(217,243,230,0) 70%)}
   .hero .pill{display:inline-block;background:#e7f6ee;color:#0a7955;border:1px solid #bfe6d2;border-radius:999px;padding:5px 14px;font-size:13px;font-weight:600;margin-bottom:22px}
@@ -118,7 +119,7 @@
       <a href="#how">How it works</a>
       <a href="#download">Download</a>
       <a href="#open-source">Open source</a>
-      <a class="btn primary small" href="https://otpanda.github.io/web/">Open the web app</a>
+      <a class="btn primary small" href="https://otpanda.github.io/web/">Web app preview</a>
     </nav>
   </div>
 </header>
@@ -130,49 +131,49 @@
     <img class="mascot" src="assets/otty-transparent.png" alt="Otty holds a green asterisk">
     <div><span class="pill">Free and open source</span></div>
     <h1>Every verification code, exactly where you need it</h1>
-    <p class="lead">OTPanda collects your one-time codes from SMS, email and your authenticator, and puts them on every device you use. It can even hand a code to an automation you trust, so you never copy one by hand again.</p>
+    <p class="lead">OTPanda is being built to collect your one-time codes from SMS, email and your authenticator, and to put them on every device you use. It will even hand a code to an automation you trust, so you never copy one by hand again.</p>
     <div class="cta-row">
-      <a class="btn primary" href="https://otpanda.github.io/web/">Create account</a>
-      <a class="btn ghost" href="https://github.com/otpanda">View on GitHub</a>
+      <span class="btn primary disabled" aria-disabled="true">Create account · Coming soon</span>
+      <a class="btn ghost" href="https://otpanda.github.io/web/">Explore the web preview</a>
     </div>
-    <p class="note">Public sign-up is not open yet. Until it is, the web app link opens an interactive preview with fictional data.</p>
+    <p class="note">Public sign-up is not open yet. The preview is an interactive demo with fictional data.</p>
   </div>
 </section>
 
 <section id="features">
   <div class="wrap">
     <h2>One home for every code</h2>
-    <p class="section-sub">However a service sends your code, OTPanda catches it and files it under the right account.</p>
+    <p class="section-sub">OTPanda is in development. This is what it is being built to do.</p>
     <div class="grid">
       <div class="card">
         <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
         <h3>SMS codes, captured</h3>
-        <p>The Android app spots one-time codes in incoming text messages and files them automatically, the moment they arrive.</p>
+        <p>The Android app will spot one-time codes in incoming text messages and file them automatically, the moment they arrive.</p>
       </div>
       <div class="card">
         <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
         <h3>Email codes, in real time</h3>
-        <p>Connect Gmail or Outlook and OTPanda lifts codes out of new mail as it lands. No polling, no waiting.</p>
+        <p>With Gmail or Outlook connected, OTPanda will lift codes out of new mail as it lands. No polling, no waiting.</p>
       </div>
       <div class="card">
         <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.586 17.414A2 2 0 0 0 2 18.828V21a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h1a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h.172a2 2 0 0 0 1.414-.586l.814-.814a6.5 6.5 0 1 0-4-4z"/><circle cx="16.5" cy="7.5" r=".5" fill="currentColor"/></svg></div>
         <h3>Built-in authenticator</h3>
-        <p>Keep your TOTP secrets in OTPanda and generate authenticator codes next to everything it collects.</p>
+        <p>TOTP secrets will live in OTPanda too, generating authenticator codes next to everything it collects.</p>
       </div>
       <div class="card">
         <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="14" height="11" rx="2"/><rect x="16" y="9" width="6" height="12" rx="2"/><path d="M8 21h6"/></svg></div>
         <h3>On every device</h3>
-        <p>Reach your codes from the web app, the Android app and a browser extension. Whatever is closest when you need it.</p>
+        <p>Your codes will be reachable from the web app, the Android app and a browser extension. Whatever is closest when you need them.</p>
       </div>
       <div class="card">
         <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg></div>
         <h3>Scoped tokens for automations</h3>
-        <p>Give a script or an AI assistant a token that can fetch one kind of code, and nothing more. Your inbox stays yours.</p>
+        <p>You will be able to give a script or an AI assistant a scoped token that fetches one kind of code, and nothing more. Your inbox stays yours.</p>
       </div>
       <div class="card">
         <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg></div>
         <h3>Share one entry, not your inbox</h3>
-        <p>Share a single service's codes with someone you choose, for as long as you choose. Revoke it in one tap.</p>
+        <p>You will be able to share a single service's codes with someone you choose, for as long as you choose, and revoke it in one tap.</p>
       </div>
     </div>
   </div>
@@ -181,22 +182,22 @@
 <section id="how">
   <div class="wrap">
     <h2>How it works</h2>
-    <p class="section-sub">Three steps between a code arriving and it being available everywhere.</p>
+    <p class="section-sub">How OTPanda will work once it launches.</p>
     <div class="steps">
       <div class="step">
         <div class="num">1</div>
         <h3>Connect your sources</h3>
-        <p>Link SMS, Gmail or Outlook, and add TOTP secrets. You choose exactly what OTPanda can see.</p>
+        <p>Link SMS, Gmail or Outlook, and add TOTP secrets. You will choose exactly what OTPanda can see.</p>
       </div>
       <div class="step">
         <div class="num">2</div>
         <h3>Codes land in one place</h3>
-        <p>New codes appear in your feed, matched to the service and account they belong to.</p>
+        <p>New codes will appear in your feed, matched to the service and account they belong to.</p>
       </div>
       <div class="step">
         <div class="num">3</div>
         <h3>Use them anywhere</h3>
-        <p>Copy a code from any device, or let an automation you authorized fetch it for itself.</p>
+        <p>You will copy a code from any device, or let an automation you authorized fetch it for itself.</p>
       </div>
     </div>
   </div>
@@ -208,7 +209,7 @@
       <img src="assets/otty-dark.png" alt="Otty on a dark background">
       <div>
         <h2>Honest about how your codes are handled</h2>
-        <p>OTPanda is a delivery service for your codes, not a zero-knowledge vault. It stores codes on its servers so your devices, and only the automations and people you authorize, can reach them. You can revoke any source, token or share at any time.</p>
+        <p>OTPanda is being built as a delivery service for your codes, not a zero-knowledge vault. By design it stores codes on its servers so your devices, and only the automations and people you authorize, can reach them. You will be able to revoke any source, token or share at any time.</p>
       </div>
     </div>
   </div>
@@ -222,7 +223,7 @@
       <div class="dl">
         <div class="top"><h3>Web app</h3><span class="chip live">Preview live</span></div>
         <p>Runs in any browser, on any device. The current build is a development preview with fictional data.</p>
-        <div class="row"><a class="btn primary small" href="https://otpanda.github.io/web/">Open the web app</a></div>
+        <div class="row"><a class="btn primary small" href="https://otpanda.github.io/web/">Open the preview</a></div>
       </div>
       <div class="dl disabled">
         <div class="top"><h3>Android app</h3><span class="chip soon">Coming soon</span></div>
