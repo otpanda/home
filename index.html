@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OTPanda | Your 2FA codes, everywhere you need them</title>
+<meta name="description" content="OTPanda collects one-time codes from SMS, email and your authenticator, and puts them on every device you use, including the automations you authorize. Free and open source.">
+<meta property="og:title" content="OTPanda">
+<meta property="og:description" content="Your 2FA codes, everywhere you need them. Free and open source.">
+<meta property="og:image" content="https://otpanda.github.io/home/assets/otty-green.png">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#10B981">
+<link rel="icon" type="image/svg+xml" href="assets/otty-transparent.svg">
+<style>
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:#f5f8f7;color:#17332a;font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;-webkit-font-smoothing:antialiased}
+  a{color:#0a7955}
+  img{max-width:100%}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+
+  .devbar{background:#fff2cb;color:#493d15;font-size:13px;text-align:center;padding:9px 16px}
+  .devbar a{color:#493d15;font-weight:600}
+
+  header.site{position:sticky;top:0;z-index:10;background:rgba(245,248,247,.88);backdrop-filter:blur(10px);border-bottom:1px solid #dfe8e2}
+  .nav{display:flex;align-items:center;gap:28px;height:68px}
+  .brand{display:flex;align-items:center;gap:9px;color:#17332a;text-decoration:none;font-size:22px;font-weight:750;letter-spacing:-.5px}
+  .brand img{width:40px;height:40px}
+  .nav-links{display:flex;gap:24px;margin-left:auto;align-items:center}
+  .nav-links a{color:#3f5a4d;text-decoration:none;font-size:14px;font-weight:550}
+  .nav-links a:hover{color:#0a7955}
+  .btn{display:inline-block;border-radius:10px;padding:11px 20px;font-size:15px;font-weight:600;text-decoration:none;border:1px solid transparent;min-height:44px}
+  .btn.primary{background:#0a7955;color:#fff}
+  .btn.primary:hover{background:#096348}
+  .btn.ghost{background:#fff;color:#0a7955;border-color:#cfe0d6}
+  .btn.ghost:hover{border-color:#0a7955}
+  .btn.small{padding:8px 16px;font-size:14px}
+
+  .hero{padding:88px 0 64px;text-align:center;background:radial-gradient(640px 320px at 50% -60px,#d9f3e6 0%,rgba(217,243,230,0) 70%)}
+  .hero .pill{display:inline-block;background:#e7f6ee;color:#0a7955;border:1px solid #bfe6d2;border-radius:999px;padding:5px 14px;font-size:13px;font-weight:600;margin-bottom:22px}
+  .hero img.mascot{width:150px;height:150px;margin-bottom:8px}
+  h1{font-size:46px;line-height:1.12;letter-spacing:-1.5px;margin:0 auto 18px;max-width:720px}
+  .hero p.lead{font-size:19px;color:#4c6a5b;max-width:640px;margin:0 auto 32px}
+  .cta-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+  .hero .note{font-size:13px;color:#7a9285;margin-top:16px}
+
+  section{padding:64px 0}
+  section h2{font-size:32px;letter-spacing:-1px;margin:0 0 10px;text-align:center}
+  .section-sub{color:#4c6a5b;text-align:center;max-width:620px;margin:0 auto 44px}
+
+  .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+  .card{background:#fff;border:1px solid #dfe8e2;border-radius:14px;padding:26px;transition:box-shadow .15s ease,border-color .15s ease}
+  .card:hover{border-color:#b9d9c8;box-shadow:0 6px 24px rgba(10,121,85,.07)}
+  .card .icon{width:44px;height:44px;border-radius:11px;background:#e7f6ee;display:grid;place-items:center;margin-bottom:16px}
+  .card .icon svg{width:22px;height:22px;stroke:#0a7955}
+  .card h3{font-size:17px;margin:0 0 8px;letter-spacing:-.2px}
+  .card p{font-size:14px;color:#4c6a5b;margin:0}
+
+  .steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;counter-reset:step}
+  .step{background:#fff;border:1px solid #dfe8e2;border-radius:14px;padding:26px}
+  .step .num{width:34px;height:34px;border-radius:50%;background:#0a7955;color:#fff;font-weight:700;display:grid;place-items:center;font-size:15px;margin-bottom:16px}
+  .step h3{font-size:16px;margin:0 0 8px}
+  .step p{font-size:14px;color:#4c6a5b;margin:0}
+
+  .honest{background:#17332a;color:#dcebe2;border-radius:18px;padding:44px 40px;display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:center}
+  .honest img{width:96px;height:96px}
+  .honest h2{text-align:left;color:#fff;font-size:24px;margin:0 0 10px}
+  .honest p{margin:0;font-size:15px;color:#b9d3c5;max-width:640px}
+
+  .downloads{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+  .dl{background:#fff;border:1px solid #dfe8e2;border-radius:14px;padding:26px;display:flex;flex-direction:column;gap:8px}
+  .dl .top{display:flex;align-items:center;justify-content:space-between;gap:12px}
+  .dl h3{font-size:17px;margin:0}
+  .dl p{font-size:14px;color:#4c6a5b;margin:0 0 12px}
+  .dl .row{margin-top:auto;display:flex;align-items:center;gap:12px}
+  .chip{font-size:12px;font-weight:600;border-radius:999px;padding:4px 12px;white-space:nowrap}
+  .chip.soon{background:#fdf3d8;color:#8a6a14;border:1px solid #ecd9a3}
+  .chip.live{background:#e7f6ee;color:#0a7955;border:1px solid #bfe6d2}
+  .chip.planned{background:#eef1f4;color:#5b6b73;border:1px solid #d7dee3}
+  .dl.disabled{opacity:.75}
+
+  .oss{text-align:center}
+  .oss .btn{margin-top:8px}
+
+  footer{border-top:1px solid #dfe8e2;padding:36px 0 44px;margin-top:24px}
+  footer .wrap{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+  footer .brand{font-size:17px}
+  footer .brand img{width:30px;height:30px}
+  footer p{font-size:13px;color:#7a9285;margin:0}
+  footer .links{margin-left:auto;display:flex;gap:20px}
+  footer .links a{font-size:13px;color:#3f5a4d;text-decoration:none}
+  footer .links a:hover{color:#0a7955}
+
+  @media(max-width:860px){
+    .grid,.steps{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .downloads{grid-template-columns:1fr}
+    .honest{grid-template-columns:1fr;text-align:center;justify-items:center;padding:36px 28px}
+    .honest h2{text-align:center}
+  }
+  @media(max-width:640px){
+    .nav-links a:not(.btn){display:none}
+    h1{font-size:33px}
+    .hero{padding:56px 0 48px}
+    section{padding:48px 0}
+    .grid,.steps{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+
+<div class="devbar">OTPanda is in active development. Items marked coming soon or planned are not available yet.</div>
+
+<header class="site">
+  <div class="wrap nav">
+    <a class="brand" href="./"><img src="assets/otty-transparent.png" alt="Otty, the OTPanda mascot">OTPanda</a>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="#features">Features</a>
+      <a href="#how">How it works</a>
+      <a href="#download">Download</a>
+      <a href="#open-source">Open source</a>
+      <a class="btn primary small" href="https://otpanda.github.io/web/">Open the web app</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section class="hero">
+  <div class="wrap">
+    <img class="mascot" src="assets/otty-transparent.png" alt="Otty holds a green asterisk">
+    <div><span class="pill">Free and open source</span></div>
+    <h1>Every verification code, exactly where you need it</h1>
+    <p class="lead">OTPanda collects your one-time codes from SMS, email and your authenticator, and puts them on every device you use. It can even hand a code to an automation you trust, so you never copy one by hand again.</p>
+    <div class="cta-row">
+      <a class="btn primary" href="https://otpanda.github.io/web/">Create account</a>
+      <a class="btn ghost" href="https://github.com/otpanda">View on GitHub</a>
+    </div>
+    <p class="note">Public sign-up is not open yet. Until it is, the web app link opens an interactive preview with fictional data.</p>
+  </div>
+</section>
+
+<section id="features">
+  <div class="wrap">
+    <h2>One home for every code</h2>
+    <p class="section-sub">However a service sends your code, OTPanda catches it and files it under the right account.</p>
+    <div class="grid">
+      <div class="card">
+        <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+        <h3>SMS codes, captured</h3>
+        <p>The Android app spots one-time codes in incoming text messages and files them automatically, the moment they arrive.</p>
+      </div>
+      <div class="card">
+        <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+        <h3>Email codes, in real time</h3>
+        <p>Connect Gmail or Outlook and OTPanda lifts codes out of new mail as it lands. No polling, no waiting.</p>
+      </div>
+      <div class="card">
+        <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.586 17.414A2 2 0 0 0 2 18.828V21a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h1a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h.172a2 2 0 0 0 1.414-.586l.814-.814a6.5 6.5 0 1 0-4-4z"/><circle cx="16.5" cy="7.5" r=".5" fill="currentColor"/></svg></div>
+        <h3>Built-in authenticator</h3>
+        <p>Keep your TOTP secrets in OTPanda and generate authenticator codes next to everything it collects.</p>
+      </div>
+      <div class="card">
+        <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="14" height="11" rx="2"/><rect x="16" y="9" width="6" height="12" rx="2"/><path d="M8 21h6"/></svg></div>
+        <h3>On every device</h3>
+        <p>Reach your codes from the web app, the Android app and a browser extension. Whatever is closest when you need it.</p>
+      </div>
+      <div class="card">
+        <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg></div>
+        <h3>Scoped tokens for automations</h3>
+        <p>Give a script or an AI assistant a token that can fetch one kind of code, and nothing more. Your inbox stays yours.</p>
+      </div>
+      <div class="card">
+        <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg></div>
+        <h3>Share one entry, not your inbox</h3>
+        <p>Share a single service's codes with someone you choose, for as long as you choose. Revoke it in one tap.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="how">
+  <div class="wrap">
+    <h2>How it works</h2>
+    <p class="section-sub">Three steps between a code arriving and it being available everywhere.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="num">1</div>
+        <h3>Connect your sources</h3>
+        <p>Link SMS, Gmail or Outlook, and add TOTP secrets. You choose exactly what OTPanda can see.</p>
+      </div>
+      <div class="step">
+        <div class="num">2</div>
+        <h3>Codes land in one place</h3>
+        <p>New codes appear in your feed, matched to the service and account they belong to.</p>
+      </div>
+      <div class="step">
+        <div class="num">3</div>
+        <h3>Use them anywhere</h3>
+        <p>Copy a code from any device, or let an automation you authorized fetch it for itself.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="honest">
+      <img src="assets/otty-dark.png" alt="Otty on a dark background">
+      <div>
+        <h2>Honest about how your codes are handled</h2>
+        <p>OTPanda is a delivery service for your codes, not a zero-knowledge vault. It stores codes on its servers so your devices, and only the automations and people you authorize, can reach them. You can revoke any source, token or share at any time.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="download">
+  <div class="wrap">
+    <h2>Get OTPanda</h2>
+    <p class="section-sub">The web app is available today as an interactive preview. Native apps are on the way.</p>
+    <div class="downloads">
+      <div class="dl">
+        <div class="top"><h3>Web app</h3><span class="chip live">Preview live</span></div>
+        <p>Runs in any browser, on any device. The current build is a development preview with fictional data.</p>
+        <div class="row"><a class="btn primary small" href="https://otpanda.github.io/web/">Open the web app</a></div>
+      </div>
+      <div class="dl disabled">
+        <div class="top"><h3>Android app</h3><span class="chip soon">Coming soon</span></div>
+        <p>Reads codes from SMS and keeps your feed in sync. APKs will be published on GitHub Releases.</p>
+        <div class="row"><a class="btn ghost small" href="https://github.com/otpanda/android/releases">GitHub Releases</a></div>
+      </div>
+      <div class="dl disabled">
+        <div class="top"><h3>F-Droid</h3><span class="chip planned">Planned</span></div>
+        <p>A fully open-source build for F-Droid is planned once the Android app is released.</p>
+        <div class="row"><a class="btn ghost small" href="https://github.com/otpanda/android">Follow progress</a></div>
+      </div>
+      <div class="dl disabled">
+        <div class="top"><h3>Browser extension</h3><span class="chip planned">Planned</span></div>
+        <p>Fill codes straight into the page you are signing in to, right from your browser toolbar.</p>
+        <div class="row"><a class="btn ghost small" href="https://github.com/otpanda/extension">Follow progress</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="open-source" class="oss">
+  <div class="wrap">
+    <h2>Open source, free forever</h2>
+    <p class="section-sub">Every part of OTPanda is developed in the open. Read the code, file an issue, or borrow an idea.</p>
+    <a class="btn primary" href="https://github.com/otpanda">github.com/otpanda</a>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <a class="brand" href="./"><img src="assets/otty-transparent.png" alt="Otty">OTPanda</a>
+    <p>OTPanda is a hobby project, free and open source.</p>
+    <div class="links">
+      <a href="https://github.com/otpanda">GitHub</a>
+      <a href="https://otpanda.github.io/web/">Web app preview</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
