@@ -1197,7 +1197,7 @@ The page below the global banner is launch-ready product copy, not a release sta
 1. Signup is not available. Replace signup dialogs only after a real, verified account flow is deployed.
 2. Web app currently uses fictional data. Keep the demo label in the activation dialog until production parity and auth are verified.
 3. Android release APK, release application ID/signing, F-Droid listing and extension store listings are not available. Replace individual dialog destinations only after verifying actual artifacts/listings.
-4. Shared Flutter client is in otpanda/client. Do not point downloads at the old Android scaffold. Desktop Linux/Windows/macOS targets exist in scope but have no releases; add download options once verified.
+4. Shared Flutter client is in otpanda/app. Do not point downloads at the old Android scaffold. Desktop Linux/Windows/macOS targets exist in scope but have no releases; add download options once verified.
 5. Provider login, real-time connectors, TOTP, entry sharing, scoped automation and cross-device delivery require end-to-end production verification before removing the banner.
 6. Remove the single top development banner only after the above launch checks pass. No form on this page collects credentials or codes.
 -->
@@ -1227,15 +1227,15 @@ The page below the global banner is launch-ready product copy, not a release sta
             title: "The Android app is still in the works.",
             description:
               "There is no release APK to download yet. The shared Flutter client is being developed in the open.",
-            label: "View client source ↗",
-            url: "https://github.com/otpanda/client",
+            label: "View app source ↗",
+            url: "https://github.com/otpanda/app",
           },
           fdroid: {
             title: "No F-Droid listing yet.",
             description:
               "F-Droid distribution is part of the plan. A verified fully open-source build and listing are still needed before this button can take you there.",
-            label: "View client source ↗",
-            url: "https://github.com/otpanda/client",
+            label: "View app source ↗",
+            url: "https://github.com/otpanda/app",
           },
           extension: {
             title: "The extension is being built.",
