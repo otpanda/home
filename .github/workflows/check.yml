@@ -1,0 +1,25 @@
+name: Check
+on:
+  push:
+    branches: ['**']
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Lint HTML
+        run: npx --yes html-validate@9 index.html
+      - name: Build check (every local asset the page references exists)
+        run: |
+          set -euo pipefail
+          missing=0
+          for f in $(grep -oE '(src|href)="[^"#:]+"' index.html | sed -E 's/^[a-z]+="//; s/"$//' | sort -u); do
+            if [ ! -e "$f" ]; then echo "missing: $f"; missing=1; fi
+          done
+          exit $missing
