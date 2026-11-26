@@ -1210,13 +1210,8 @@
     </dialog>
     <!-- LAUNCH WIRING CHECKLIST, 2026-11-23:
 The page below the global banner is launch-ready product copy, not a release status tracker.
-1. Signup is not available. Replace signup dialogs only after a real, verified account flow is deployed.
-2. Web app currently uses fictional data. Keep the demo label in the activation dialog until production parity and auth are verified.
-3. Android release APK, release application ID/signing, F-Droid listing and extension store listings are not available. Replace individual dialog destinations only after verifying actual artifacts/listings.
-4. Shared Flutter client is in otpanda/app. Do not point downloads at the old Android scaffold. Desktop Linux/Windows/macOS targets exist in scope but have no releases; add download options once verified.
-5. Provider login, real-time connectors, TOTP, entry sharing, scoped automation and cross-device delivery require end-to-end production verification before removing the banner.
-6. Remove the single top development banner only after the above launch checks pass. No form on this page collects credentials or codes.
--->
+Verified download destinations are explicit immutable release assets. Keep unlisted store destinations labelled as unavailable.
+    -->
     <script>
       (() => {
         "use strict";
@@ -1228,23 +1223,23 @@ The page below the global banner is launch-ready product copy, not a release sta
           signup: {
             title: "Otty is still getting settled.",
             description:
-              "Account creation is not open yet. You can explore the interactive web demo with fictional data. It is not connected to an account and does not collect real codes.",
-            label: "Explore the demo ↗",
+              "Sign in with Google or a passkey, or create an account with a passkey. OTPanda is an early alpha with features still in development.",
+            label: "Open OTPanda ↗",
             url: "https://otpanda.github.io/app/",
           },
           web: {
             title: "Take a look around.",
             description:
-              "The web app is currently an interactive demo with fictional data. Real sign-in and connected sources are not available yet. Please do not enter real verification codes.",
-            label: "Open fictional-data demo ↗",
+              "Use OTPanda in your browser. Sign in with Google or a passkey. This is an early alpha with features still in development.",
+            label: "Open web app ↗",
             url: "https://otpanda.github.io/app/",
           },
           android: {
-            title: "The Android app is still in the works.",
+            title: "Android alpha.8 is available.",
             description:
-              "There is no release APK to download yet. The shared Flutter client is being developed in the open.",
-            label: "View app source ↗",
-            url: "https://github.com/otpanda/app",
+              "Download the corrected alpha.8 APK. Install it over your current version without uninstalling. Early alpha, with device lock and offline keys still in development.",
+            label: "Download Android alpha.8 ↓",
+            url: "https://github.com/otpanda/app/releases/download/v0.1.0-alpha.8/otpanda-android-google-v0.1.0-alpha.8.apk",
           },
           fdroid: {
             title: "No F-Droid listing yet.",
