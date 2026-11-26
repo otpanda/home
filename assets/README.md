@@ -13,6 +13,6 @@ The vector redraw was approved on 22 November 2026. Otty is the OTPanda mascot. 
 
 ## Brand mark (`assets/brand`)
 
-The OTPanda brand mark is the refined Otty with the asterisk badge and swirl, on a green container. Use the rounded tile (`otty-tile`) or the circle (`otty-circle`) according to the surrounding shape. `-small` variants drop the swirl and enlarge the face and badge for 16 to 48 px. `apple-touch-icon.png` and `social-card.png` are used by the landing page.
+The V7 OTPanda brand mark is the centered panda with a plain inward asterisk disc, on a green container. It has no swirl or paw fingers. Use `otty-tile-v7.svg` for the rounded tile and `otty-circle-v7.svg` for a circle. The `-small-v7` assets use the same geometry for 16 to 48 px. The landing page uses `apple-touch-icon-v7.png` and `social-card-v7.png`.
 
 The large Otty illustration (`otty-*` files above) is the character artwork. It stays in the landing page hero and is not the brand mark.
