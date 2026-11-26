@@ -23,3 +23,8 @@ jobs:
             if [ ! -e "$f" ]; then echo "missing: $f"; missing=1; fi
           done
           exit $missing
+      - name: Hero Otty illustration stays unchanged
+        run: |
+          set -euo pipefail
+          echo "0f91b6924821eae1bc08a58ed90ba8dea568b2cf1be17300882d444b426d3762  assets/otty-transparent.svg" | sha256sum -c -
+          grep -q 'class="otty" src="assets/otty-transparent.svg"' index.html
