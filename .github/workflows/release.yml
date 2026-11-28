@@ -1,0 +1,37 @@
+name: Deploy landing page
+# Runs when a GitHub release is published. A merge to main does not deploy.
+# Requires the repository Pages source to be set to "GitHub Actions".
+# The workflow never creates the release.
+on:
+  release:
+    types: [published]
+permissions:
+  contents: read
+concurrency:
+  group: home-pages
+  cancel-in-progress: false
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+      - name: Assemble the site (same files the branch-based Pages deploy served)
+        run: |
+          set -euo pipefail
+          mkdir site
+          cp -r index.html assets FONT-LICENSES.txt site/
+          touch site/.nojekyll
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+      - id: deployment
+        uses: actions/deploy-pages@v4
